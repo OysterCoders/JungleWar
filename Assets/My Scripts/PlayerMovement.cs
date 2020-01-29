@@ -14,7 +14,7 @@ public class PlayerMovement : MonoBehaviour {
 
     //Rotation and look
     private float xRotation;
-    private float sensitivity = 50f;
+    private float sensitivity = 100f;
     private float sensMultiplier = 1f;
     
     //Movement
@@ -73,12 +73,16 @@ public class PlayerMovement : MonoBehaviour {
         x = Input.GetAxisRaw("Horizontal");
         y = Input.GetAxisRaw("Vertical");
         jumping = Input.GetButton("Jump");
-        crouching = Input.GetKey(KeyCode.LeftControl);
+        crouching = Input.GetKey(KeyCode.RightShift);
       
         //Crouching
-        if (Input.GetKeyDown(KeyCode.LeftControl))
+        if (Input.GetKeyDown(KeyCode.RightShift))
             StartCrouch();
-        if (Input.GetKeyUp(KeyCode.LeftControl))
+        if (Input.GetKeyUp(KeyCode.RightShift))
+            StopCrouch();
+        if (Input.GetKeyDown(KeyCode.LeftShift))
+            StartCrouch();
+        if (Input.GetKeyUp(KeyCode.LeftShift))
             StopCrouch();
     }
 
