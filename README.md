@@ -1,2 +1,2 @@
 # JungleWar
-fortnite ripoff
+some weird sh*t
